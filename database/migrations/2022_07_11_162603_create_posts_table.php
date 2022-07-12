@@ -15,6 +15,13 @@ return new class extends Migration
     {
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
+            $table->string('title',255);
+            $table->string('slug',255);
+            $table->text('description');
+            $table->string('short_description',600)->nullable();
+            $table->enum('status', ['Pending', 'Approved', 'Reject'])->default('Pending');
+            $table->integer('view_count')->default(0);
+            $table->string('youtube_url')->nullable();
             $table->timestamps();
         });
     }
