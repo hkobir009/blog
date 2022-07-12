@@ -15,6 +15,12 @@ return new class extends Migration
     {
         Schema::create('social_urls', function (Blueprint $table) {
             $table->id();
+            $table->string('facebook_url')->nullable();
+            $table->string('youtube_url')->nullable();
+            $table->string('twitter_url')->nullable();
+            $table->string('instergram_url')->nullable();
+            $table->string('linkdin_url')->nullable();
+            $table->string('github_url')->nullable();
             $table->timestamps();
         });
     }
